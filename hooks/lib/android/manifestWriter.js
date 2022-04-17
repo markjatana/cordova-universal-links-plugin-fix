@@ -18,7 +18,9 @@ module.exports = {
  * @param {Object} pluginPreferences - plugin preferences as JSON object; already parsed
  */
 function writePreferences(cordovaContext, pluginPreferences) {
-  var pathToManifest = path.join(cordovaContext.opts.projectRoot, 'platforms', 'android', 'cordovaLib', 'AndroidManifest.xml');
+  console.log("cordova-universal-links-plugin-fix: Writing to AndroidManifest.xml at platform/android/app/src/main");
+  var pathToManifest = path.join(cordovaContext.opts.projectRoot, 'platforms', 'android', 'app', 'src', 'main', 'AndroidManifest.xml');
+
   var manifestSource = xmlHelper.readXmlAsJson(pathToManifest);
   var cleanManifest;
   var updatedManifest;
